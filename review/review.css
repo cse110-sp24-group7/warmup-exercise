@@ -3,76 +3,122 @@ body {
     background: #f4f4f4;
     margin: 0;
     padding: 20px;
-  }
-  
-  .reviews-wrapper {
-    display: flex;
-    overflow-x: auto;
+}
+
+.reviews-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Adjust the min width as needed */
     gap: 20px;
-    padding-bottom: 20px; /* Allows for some space at the bottom if it overflows vertically */
+    /* space between reviews */
+    padding-bottom: 20px;
+    /* Allows for some space at the bottom if it overflows vertically */
+    transition: all 0.5s ease;
+    /* animate opacity and position */
+    opacity: 0;
+    /* start out invisible */
+    transform: translateY(50px);
+    /* start below its final position */
+    visibility: hidden;
+    /* hide it initially */
+}
 
-    /* Animation */
-    opacity: 0; /* start out invisible */
-    transform: translateY(50px); /* start below its final position */
-    visibility: hidden; /* hide it initially */
-    transition: all 0.5s ease; /* animate opacity and position */
-  }
+/* Responsive Grid adjustments */
+@media (min-width: 1200px) {
 
-  .reviews-visible {
-    opacity: 1; /* make it fully visible */
-    transform: translateY(0); /* move to its final position */
-    visibility: visible; /* ensure it's visible */
-  }
-  
-  .review-container {
-    flex: 0 0 auto; /* Don't grow, don't shrink, be auto width */
-    width: 300px; /* Adjust as necessary */
+    /* Large screens, 4 columns */
+    .reviews-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+
+    /* Medium screens, 3 columns */
+    .reviews-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+
+    /* Small screens, 2 columns */
+    .reviews-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 599px) {
+
+    /* Extra small screens, 1 column */
+    .reviews-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+.reviews-visible {
+    opacity: 1;
+    /* make it fully visible */
+    transform: translateY(0);
+    /* move to its final position */
+    visibility: visible;
+    /* ensure it's visible */
+}
+
+.review-container {
+    flex: 0 0 auto;
+    /* Don't grow, don't shrink, be auto width */
+    width: 300px;
+    /* Adjust as necessary */
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
-  }
-  
-  .review-header {
+}
+
+.review-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-  }
-  
-  .reviewer-name {
+}
+
+.reviewer-name {
     font-weight: bold;
     color: #0073bb;
-  }
-  
-  .review-date {
+}
+
+.review-date {
     color: #767676;
-  }
-  
-  .review-rating {
+}
+
+.review-rating {
     font-size: 20px;
-  }
-  
-  .star {
+}
+
+.star {
     color: #cccccc;
     display: inline-block;
     margin-right: 5px;
-  }
-  .star.yellow {
+}
+
+.star.yellow {
     color: #f8b700;
-  }
-  
-  .review-text {
+}
+
+.review-text {
     margin-top: 10px;
     color: #333;
-  }
-  
-  /* Hide scrollbar for cleaner look */
-  .reviews-wrapper::-webkit-scrollbar {
+}
+
+/* Hide scrollbar for cleaner look */
+.reviews-wrapper::-webkit-scrollbar {
     display: none;
-  }
-  
-  .reviews-wrapper {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
+}
+
+.reviews-wrapper {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
