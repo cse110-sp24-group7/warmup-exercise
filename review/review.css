@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .reviews-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px; /* Allows for some space at the bottom if it overflows vertically */
+
+    /* Animation */
+    opacity: 0; /* start out invisible */
+    transform: translateY(50px); /* start below its final position */
+    visibility: hidden; /* hide it initially */
+    transition: all 0.5s ease; /* animate opacity and position */
+  }
+
+  .reviews-visible {
+    opacity: 1; /* make it fully visible */
+    transform: translateY(0); /* move to its final position */
+    visibility: visible; /* ensure it's visible */
+  }
+  
+  .review-container {
+    flex: 0 0 auto; /* Don't grow, don't shrink, be auto width */
+    width: 300px; /* Adjust as necessary */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .reviewer-name {
+    font-weight: bold;
+    color: #0073bb;
+  }
+  
+  .review-date {
+    color: #767676;
+  }
+  
+  .review-rating {
+    font-size: 20px;
+  }
+  
+  .star {
+    color: #cccccc;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .star.yellow {
+    color: #f8b700;
+  }
+  
+  .review-text {
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  /* Hide scrollbar for cleaner look */
+  .reviews-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .reviews-wrapper {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
