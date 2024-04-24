@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Team 7: Sentiment Tracker</title>
+    <link rel="icon" href="res/akatsuki-7-logo.ico">
+    <style>
+        body {
+            transition: background-color 2s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./res/akatsuki-7-logo.ico">
+        <h1>Sentiment Tracker</h1>
+    </header>
+    <form action = 'result.html'>
+        <fieldset>
+            <legend>Sentiment Scale</legend>
+            <div>
+                <input type="radio" id="sentiment1" name="sentiment" value="1">
+                <label for="sentiment1">1</label>
+            </div>
+            <div>
+                <input type="radio" id="sentiment2" name="sentiment" value="2">
+                <label for="sentiment2">2</label>
+            </div>
+            <div>
+                <input type="radio" id="sentiment3" name="sentiment" value="3" checked>
+                <label for="sentiment3">3</label>
+            </div>
+            <div>
+                <input type="radio" id="sentiment4" name="sentiment" value="4">
+                <label for="sentiment4">4</label>
+            </div>
+            <div>
+                <input type="radio" id="sentiment5" name="sentiment" value="5">
+                <label for="sentiment5">5</label>
+            </div>
+            <!--Change this image based on the button the rating the user has clicked or is hovering over-->
+        </fieldset>
+        <fieldset>
+            <legend>Sentiment Notes</legend>
+            <textarea id="sentiment-notes" name="sentiment-notes" rows="4" cols="50" placeholder="Anything you want to remember about your day?"></textarea>
+        </fieldset>
+       <button type="submit">Submit</button> 
+    </form>
+    <script src="background.js"></script>
+</body>
+</html>
