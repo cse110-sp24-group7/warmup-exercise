@@ -1,7 +1,7 @@
 ---
 name: Issue Template
 about: General Issue Template for Projects
-title: ''
+title: 'Issue Template'
 labels: ''
 assignees: ''
 
