@@ -1,14 +1,15 @@
 # Documentation For \<Componenent\>
 
-## What is the role of \<Component>?
+## Role of \<Component\>
 
-## How does \<Component> work?
+## Intended Purpose
 
-## How is \<Component> implemented?
+## Implementation/Syntax Approaches?
 
-## Are there any dependencies for \<Component>?
+## Requirements
 
-## How do you test \<Component>?
+## Testing
 
 #### Authors
-- \<Autor>
+
+-   \<Autor>
