@@ -1,0 +1,12 @@
+name: Run Frontend and Backend Tests
+
+on: 
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  name: tests
+  runs-on: ubuntu-latest
+  steps: 
+    - 
