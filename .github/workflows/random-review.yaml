@@ -43,6 +43,7 @@ jobs:
           script: |
             const { owner, repo } = context.repo;
             const { number } = context.payload.pull_request;
+            const github = context.github;
             const randomReviewers = '${{ steps.potential_reviewers.outputs.random_reviewers }}'.split(' ');
             await github.pulls.createReviewRequest({
               owner,
