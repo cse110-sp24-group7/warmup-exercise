@@ -11,32 +11,30 @@ jobs:
     steps:
       - name: Get pull request details
         id: pr
-        uses: octokit/request-action@v2.x
-        with:
-          route: GET /repos/:owner/:repo/pulls/:pull_number
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
-          pull_number: ${{ github.event.pull_request.number }}
-          headers:
-            authorization: "token ${{ secrets.GITHUB_TOKEN }}"
-      
+        run: |
+          pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+          repo_owner=$(jq --raw-output .repository.owner.login "$GITHUB_EVENT_PATH")
+          repo_name=$(jq --raw-output .repository.name "$GITHUB_EVENT_PATH")
+          curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/$repo_owner/$repo_name/pulls/$pull_request_number" \
+            > pull_request.json
+
       - name: Find potential reviewers
         id: potential_reviewers
         run: |
-          const pr = context.payload;
-          const allUsers = await github.paginate(github.rest.users.list);
-          const currentAssignees = pr.assignees.map(assignee => assignee.login);
-          const allReviewers = allUsers.filter(user => !currentAssignees.includes(user.login) && user.login !== pr.user.login);
-          const randomReviewers = [];
-          while (randomReviewers.length < 2 && allReviewers.length > 0) {
-            const randomIndex = Math.floor(Math.random() * allReviewers.length);
-            const reviewer = allReviewers.splice(randomIndex, 1)[0];
-            randomReviewers.push(reviewer.login);
-          }
-          console.log(randomReviewers.join(','));
-          core.setOutput('random_reviewers', randomReviewers.join(','));
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          current_assignees=$(jq --raw-output '.assignees | .[].login' pull_request.json)
+          pr_user=$(jq --raw-output '.user.login' pull_request.json)
+          all_users=$(curl -sSL -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/$repo_owner/$repo_name/collaborators")
+          random_reviewers=()
+          while IFS= read -r line; do
+            if ! [[ $current_assignees =~ $line ]] && [[ $line != $pr_user ]]; then
+              random_reviewers+=("$line")
+            fi
+          done <<< "$(echo "$all_users" | jq -r '.[].login')"
+          random_reviewers=($(shuf -e "${random_reviewers[@]}"))
+          random_reviewers=("${random_reviewers[@]:0:2}")
+          echo "::set-output name=random_reviewers::${random_reviewers[*]}"
 
       - name: Assign random reviewers
         uses: actions/github-script@v5
@@ -45,7 +43,7 @@ jobs:
           script: |
             const { owner, repo } = context.repo;
             const { number } = context.payload.pull_request;
-            const randomReviewers = '${{ steps.potential_reviewers.outputs.random_reviewers }}'.split(',');
+            const randomReviewers = '${{ steps.potential_reviewers.outputs.random_reviewers }}'.split(' ');
             await github.pulls.createReviewRequest({
               owner,
               repo,
