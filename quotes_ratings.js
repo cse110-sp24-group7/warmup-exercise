@@ -1,3 +1,29 @@
+// 7 star rating:
+const sevenStarQuotes = [
+    "In the tapestry of destiny, each of us holds the thread of our own fate. Let your journey be guided by the light of the seven stars, leading you to your rightful place.",
+    "Like the seven stars that form the Big Dipper, let your dreams shine brightly in the vast expanse of the universe. Reach for the stars and embrace the infinite possibilities that lie ahead.",
+    "The journey of life is a celestial dance, with each step guided by the light of the seven stars. Dance boldly, for your destiny awaits under the shimmering canopy of the cosmos.",
+    "When you feel lost in the vastness of existence, remember that you are never alone. The seven stars watch over you, guardians of your dreams and protectors of your soul.",
+    "Every soul carries within it the light of the seven stars, a spark of divine energy that illuminates the path to enlightenment. Let your inner light shine brightly and lead you to your true purpose.",
+    "In the symphony of the cosmos, let your voice be heard like the song of the seven stars. Sing with passion, for your melody is an echo of the universe's eternal harmony.",
+    "The secrets of the universe are written in the constellations, and the seven stars hold the key to unlocking them. Seek knowledge, and let the wisdom of the stars guide you on your quest.",
+    "When the storms of life rage and the seas of uncertainty threaten to engulf you, remember that you are a child of the seven stars, born to weather any tempest and emerge victorious."
+];
+
+// 6 star rating:
+const sixStarQuotes = [
+    "In the vast sky of possibilities, let your dreams be the guiding stars. Aim for not just one, but six stars of success.",
+    "Every challenge you overcome is like adding another star to your sky. With determination and resilience, you'll soon be shining with six stars.",
+    "Life is like a constellation, and your actions are the stars that light up the darkness. Strive to be the brightest among the six stars that adorn your path.",
+    "Success isn't about reaching for one star; it's about reaching for all six. Aim high, work hard, and watch as your constellation of achievements grows.",
+    "You are the architect of your destiny, and every decision you make adds or subtracts stars from your sky. Aim for the full set—aim for all six stars—and make your journey one of brilliance.",
+    "Like a constellation in the night sky, let your achievements form a pattern of brilliance. Aim to shine with the radiance of all six stars.",
+    "In the journey of life, let perseverance be your compass and resilience your guiding light. With determination, you'll illuminate the sky with all six stars of success.",
+    "Just as the night sky is adorned with stars, let your path be illuminated by the brightness of your endeavors. Strive to reach for all six stars and create your own galaxy of accomplishments.",
+    "Each accomplishment is a star in the sky of your life's journey. Aim to gather all six stars, and let their light guide you to greater heights.",
+    "The journey to success is not about reaching one pinnacle; it's about reaching for all six. Let your ambition soar, and may you shine with the brilliance of a sky full of stars."
+];
+
 // 5 star rating: (excited/very happy)
 const fiveStarQuotes = [
     "You are the architect of your own happiness; keep building those five-star moments!",
@@ -69,5 +95,7 @@ const oneStarQuotes = [
 ];
 
 // Export the arrays
-const quotes = [oneStarQuotes, twoStarQuotes, threeStarQuotes, fourStarQuotes, fiveStarQuotes];
+
+const quotes = [oneStarQuotes, twoStarQuotes, threeStarQuotes, fourStarQuotes, fiveStarQuotes, sixStarQuotes, sevenStarQuotes];
 export default quotes;
+
