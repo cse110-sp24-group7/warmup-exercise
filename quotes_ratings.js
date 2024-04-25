@@ -95,12 +95,7 @@ const oneStarQuotes = [
 ];
 
 // Export the arrays
-module.exports = {
-    sevenStarQuotes,
-    sixStarQuotes,
-    fiveStarQuotes,
-    fourStarQuotes,
-    threeStarQuotes,
-    twoStarQuotes,
-    oneStarQuotes
-};
+
+const quotes = [oneStarQuotes, twoStarQuotes, threeStarQuotes, fourStarQuotes, fiveStarQuotes, sixStarQuotes, sevenStarQuotes];
+export default quotes;
+
