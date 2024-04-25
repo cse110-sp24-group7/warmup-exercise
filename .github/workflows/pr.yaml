@@ -1,0 +1,25 @@
+name: Assign Reviewers
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  assign_reviewers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Assign reviewers
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const { number } = context.payload.pull_request;
+            const assignees = ["arnavkamdar", "SamvritSrinath"];
+            await github.pulls.createReviewRequest({
+              owner,
+              repo,
+              pull_number: number,
+              reviewers: assignees
+            });
