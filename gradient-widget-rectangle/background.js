@@ -13,16 +13,9 @@ document.querySelectorAll('.section').forEach((section, index) => {
     });
 
     section.addEventListener('mouseout', function () {
-        // Set a timeout to gradually revert to the default gradient
-        window.gradientTimeout = setTimeout(() => {
-            resetGradient();
-        });
+        resetEmoji();
     });
 });
-
-function resetGradient() {
-    document.body.style.background = 'linear-gradient(90deg, rgba(255,98,98,1) 12%, rgba(245,158,89,1) 24%, rgba(255,250,110,1) 36%, rgba(110,255,100,1) 50%, rgba(101,181,236,1) 64%, rgba(99,87,255,1) 76%, rgba(151,62,255,1) 88%)';
-}
 
 function updateEmoji(color) {
     const emojiMap = {
@@ -39,4 +32,6 @@ function updateEmoji(color) {
 
 function resetEmoji() {
     document.getElementById('emoji').textContent = '😐';
+    document.body.style.background = 'linear-gradient(90deg, rgba(255,98,98,1) 12%, rgba(245,158,89,1) 24%, rgba(255,250,110,1) 36%, rgba(110,255,100,1) 50%, rgba(101,181,236,1) 64%, rgba(99,87,255,1) 76%, rgba(151,62,255,1) 88%)';
 }
+
