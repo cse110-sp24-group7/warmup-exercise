@@ -1,0 +1,54 @@
+name: Assign Random Reviewers
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  assign_random_reviewers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get pull request details
+        id: pr
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/:owner/:repo/pulls/:pull_number
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          pull_number: ${{ github.event.pull_request.number }}
+          headers:
+            authorization: "token ${{ secrets.GITHUB_TOKEN }}"
+      
+      - name: Find potential reviewers
+        id: potential_reviewers
+        run: |
+          const pr = context.payload;
+          const allUsers = await github.paginate(github.rest.users.list);
+          const currentAssignees = pr.assignees.map(assignee => assignee.login);
+          const allReviewers = allUsers.filter(user => !currentAssignees.includes(user.login) && user.login !== pr.user.login);
+          const randomReviewers = [];
+          while (randomReviewers.length < 2 && allReviewers.length > 0) {
+            const randomIndex = Math.floor(Math.random() * allReviewers.length);
+            const reviewer = allReviewers.splice(randomIndex, 1)[0];
+            randomReviewers.push(reviewer.login);
+          }
+          console.log(randomReviewers.join(','));
+          core.setOutput('random_reviewers', randomReviewers.join(','));
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Assign random reviewers
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const { number } = context.payload.pull_request;
+            const randomReviewers = '${{ steps.potential_reviewers.outputs.random_reviewers }}'.split(',');
+            await github.pulls.createReviewRequest({
+              owner,
+              repo,
+              pull_number: number,
+              reviewers: randomReviewers
+            });
