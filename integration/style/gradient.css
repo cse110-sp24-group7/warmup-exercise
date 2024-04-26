@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 98, 98, 1) 12%, rgba(245, 158, 89, 1) 24%, rgba(255, 250, 110, 1) 36%, rgba(110, 255, 100, 1) 50%, rgba(101, 181, 236, 1) 64%, rgba(99, 87, 255, 1) 76%, rgba(151, 62, 255, 1) 88%);
+}
+
+.gradient-container {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    /* overflow: hidden; */
+    margin:auto;
+    border: black;
+}
+
+.rectangle {
+    position: absolute;
+    overflow: hidden;
+    border: 5px solid black;
+    width: 150%;
+    height: 50%;
+    left: -25%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transform-origin: bottom center;
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease;
+    /* Smooth transition effect */
+    border-right: 2px solid white;
+    /* white divider */
+}
+
+#last {
+    border-right: none;
+}
+
+
+.section:nth-child(1) {
+    background-image: linear-gradient(to right, #ff0000, #ff6f00);
+}
+
+.section:nth-child(2) {
+    background-image: linear-gradient(to right, #ff7f00, #ffbf00);
+}
+
+.section:nth-child(3) {
+    background-image: linear-gradient(to right, #ffff00, #80ff00);
+}
+
+.section:nth-child(4) {
+    background-image: linear-gradient(to right, #00ff00, #0080ff);
+}
+
+.section:nth-child(5) {
+    background-image: linear-gradient(to right, #0000ff, #2a0082);
+}
+
+.section:nth-child(6) {
+    background-image: linear-gradient(to right, #4b0082, #6a00b3);
+}
+
+.section:nth-child(7) {
+    background-image: linear-gradient(to right, #9400d3, #bb30ff);
+}
+
+.section:hover {
+    box-shadow: inset 0 0 0 7px #aaa; /* Inner shadow for hover indication */
+    z-index: 10;
+}
+
+.section.selected {
+    box-shadow: inset 0 0 0 7px #0073bb; /* Inner shadow for selected indication */
+    z-index: 10;
+}
+
+/* Ensure the border doesn't change the box size on hover and selected */
+.section, .section:hover, .section.selected {
+    box-sizing: border-box;
+}
+
+
+.emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    font-size: 200px;
+    z-index: 1000;
+}
+
+/* Apply general styling to the fieldset to match review containers */
+fieldset {
+    position: absolute;
+    top: 70%;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light grey border, adjust color as needed */
+    padding: 10px;
+    padding-top:30px;
+    background-color: #fff; /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px 0; /* Spacing above and below the fieldset */
+}
+
+/* Style the legend to be more distinct and integrated */
+legend {
+    position: absolute;
+    top: 7px; 
+    left: 10px; 
+    background: white; 
+    padding: 0 5px; 
+    font-size: 16px; 
+    width: auto; 
+    background-color: #fff; 
+    color: #0073bb; 
+    font-weight: bold;
+}
+
+/* Style the textarea to fit within the styled fieldset */
+textarea {
+    width: calc(100% - 40px); /* Full width of the fieldset minus padding */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px;
+    resize: none; /* Disable resizing to maintain layout */
+}
+
+#submitBtn {
+    position: absolute;
+    top:75%;
+
+    background-color: #fff; /* Match the background color of your sentiment notes box */
+    color: #0073bb; /* Font color matching the reviewer names in the review boxes */
+    border: 1px solid #ccc; /* Border color to match the fieldset */
+    border-radius: 5px; /* Rounded corners like your fieldset */
+    padding: 10px 20px; /* Padding for a larger click area and better aesthetics */
+    font-size: 16px; /* Font size to match the sentiment notes styling */
+    cursor: pointer; /* Cursor to indicate it's clickable */
+    outline: none; /* Remove the outline to match the sentiment notes styling */
+    margin-top: 10px; /* Space between the fieldset and button */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+#submitBtn:hover {
+    background-color: #e8e8e8; /* Slightly darker background on hover for feedback */
+    color: #005f8b; /* Slightly darker color on hover for better visibility */
+}
+
+#submitBtn:active {
+    background-color: #d7d7d7; /* Even darker background to simulate click */
+    color: #00496b; /* Even darker text color to simulate click */
+}
+
+#submitBtn:focus {
+    border-color: #0073bb; /* Highlight color when the button is focused */
+    box-shadow: 0 0 0 2px rgba(0, 115, 187, 0.5); /* Glow effect for focus */
+}
