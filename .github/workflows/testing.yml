@@ -2,13 +2,24 @@ name: Code Quality checks
 on:
   pull_request:
     branches: [main]
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+
 jobs:
+  check_concurrency:
+    runs-on: ubuntu-latest
+    outputs:
+      concurrencyKey: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+    steps:
+      - name: Extract Concurrency Key
+        id: extract_concurrency_key
+        run: echo "::set-output name=concurrencyKey::${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}"
+
   prettier:
     name: Prettier
+    needs: check_concurrency
     runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ needs.check_concurrency.outputs.concurrencyKey }}
+      cancel-in-progress: true
     strategy:
       matrix:
         node-version: [18]

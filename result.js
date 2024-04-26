@@ -2,6 +2,9 @@ import quotes from './quotes_ratings.js'
 
 let rank = parseInt(localStorage.getItem('sentiment-rank'));
 let notes = localStorage.getItem('sentiment-notes');
+const selectedColor = localStorage.getItem('selectedColor');
+
+if (selectedColor) document.body.style.background = selectedColor;
 if(!notes) notes = '';
 if(rank) document.getElementById('input-summary').innerText =  "You submitted: \n Your ranking: " + rank + '\n' + "Notes: " + notes + '\n';
 else document.getElementById('input-summary').innerText = "You haven't submitted anything!";
