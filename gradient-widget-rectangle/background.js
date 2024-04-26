@@ -7,8 +7,21 @@ document.querySelectorAll('.section').forEach((section, index) => {
         const hoveredColor = colors[index];
         let gradientStart = colors[Math.max(0, index - 1)];
         let gradientEnd = colors[Math.min(colors.length - 1, index + 1)];
-
-        document.body.style.background = `linear-gradient(to right, ${gradientStart}, ${hoveredColor}, ${gradientEnd})`;
+        const previousColor = index > 0 ? colors[index - 1] : colors[0];
+        
+        const steps = 20; // Number of steps for interpolation
+        const interval = 50; // Interval in milliseconds
+        let step = 0;
+        const gradientTransition = setInterval(() => {
+            const gradientColor = interpolateColor(gradientStart, gradientEnd, step / steps);
+            const gradientColor1 = interpolateColor(hoveredColor, previousColor, step / steps);
+            const hovered = interpolateColor(hoveredColor, hoveredColor, step / steps);
+            document.body.style.background = `linear-gradient(to right, ${gradientColor1}25%, ${hovered}, ${gradientColor}75%)`;
+            step++;
+            if (step >= steps) {
+                clearInterval(gradientTransition);
+            }
+        }, interval);
         updateEmoji(hoveredColor);
     });
 
@@ -16,6 +29,15 @@ document.querySelectorAll('.section').forEach((section, index) => {
         resetEmoji();
     });
 });
+
+
+function interpolateColor(startColor, endColor, ratio) {
+    const r = Math.ceil(parseInt(startColor.substring(1, 3), 16) * (1-ratio) + parseInt(endColor.substring(1, 3), 16) * ratio);
+    const g = Math.ceil(parseInt(startColor.substring(3, 5), 16) * (1-ratio) + parseInt(endColor.substring(3, 5), 16) * ratio);
+    const b = Math.ceil(parseInt(startColor.substring(5, 7), 16) * (1-ratio) + parseInt(endColor.substring(5, 7), 16) * ratio);
+    return `rgb(${r},${g},${b})`;
+}
+
 
 function updateEmoji(color) {
     const emojiMap = {
