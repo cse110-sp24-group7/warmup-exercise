@@ -5,7 +5,7 @@ Depending on the location of the users mouse, the background gradient changes.
 
 ## Intended Purpose
 
-When the user hovers their mouse over a selection, the background gradient changes to emphasize the mood. The color of the gradient should change through an animation when the mouse hovers over.
+When the user hovers their mouse over a selection, the background gradient changes to emphasize the mood by using an animation.
 
 ## Implementation/Syntax Approaches?
 
