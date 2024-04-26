@@ -1,3 +1,5 @@
+let selectedSection = null;
+
 document.querySelectorAll('.section').forEach((section, index) => {
     section.addEventListener('mouseover', function () {
         if (!window.locked) { // Only change on hover if not locked
@@ -12,6 +14,14 @@ document.querySelectorAll('.section').forEach((section, index) => {
     });
 
     section.addEventListener('click', function () {
+        if (selectedSection) {
+            selectedSection.classList.remove('selected');
+        }
+
+        // Add 'selected' class to the newly clicked section
+        section.classList.add('selected');
+        selectedSection = section;
+
         // Always lock to the new index when clicked on any section
         window.locked = true;
         window.lockedIndex = index;
@@ -26,6 +36,12 @@ document.addEventListener('click', function (event) {
             window.locked = false;
             window.lockedIndex = -1;
             resetEmoji();
+
+            if (selectedSection) {
+                selectedSection.classList.remove('selected');
+            }
+            // Clear selectedSection since nothing is selected now
+            selectedSection = null;
         }
     }
 });
@@ -60,7 +76,7 @@ function resetEmoji() {
 
 const form = document.getElementById('sentiment-form');
 
-document.getElementById('submitBtn').addEventListener('click', function() {
+document.getElementById('submitBtn').addEventListener('click', function () {
     // Check if an emotion is locked
     if (window.locked && window.lockedIndex !== -1) {
         // Get the user's sentiment note from the textarea
