@@ -169,7 +169,7 @@ textarea {
 /* Popup container */
 .popup {
     position: absolute;
-    top:90%;
+    top:85%;
     display: inline-block;
     cursor: pointer;
     -webkit-user-select: none;
@@ -226,6 +226,6 @@ textarea {
 
   img {
     position: absolute;
-    top: 85%;
+    top: 90%;
     width: 36px;
   }
