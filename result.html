@@ -6,6 +6,8 @@
     <title>Team 7: Sentiment Tracker</title>
     <link rel="icon" href="res/akatsuki-7-logo.ico">
     <script src="result.js" type="module" defer></script>
+    <script src="./review/review.js" defer></script>
+    <link rel="stylesheet" href="./review/review.css">
 </head>
 <body>
     <header>
@@ -17,6 +19,64 @@
     </div>
     <div id="quote">
         <p>Quote:</p>
+    </div>
+    <button><a href="./index.html">Record Another</a></button>
+    
+    <button id="loadReviewsBtn">Load Reviews</button>
+    <div class="reviews-wrapper">
+        <h2>Here's what others have said: </h2>
+        <div class="review-container" emotion-score="7">
+            <div class="review-header">
+                <span class="reviewer-name">Alice</span>
+                <span class="review-date">April 24, 2024</span>
+            </div>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+            </div>
+            <div class="review-text">Feeling Great!</div>
+        </div>
+
+        <div class="review-container" emotion-score="5">
+            <div class="review-header">
+                <span class="reviewer-name">Bob</span>
+                <span class="review-date">April 24, 2024</span>
+            </div>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+            </div>
+            <div class="review-text">Feeling Mediocre...</div>
+        </div>
+
+        <div class="review-container" emotion-score="3">
+            <div class="review-header">
+                <span class="reviewer-name">Charlie</span>
+                <span class="review-date">April 24, 2024</span>
+            </div>
+            <div class="review-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+            </div>
+            <div class="review-text">Feeling Terrible...</div>
+        </div>
+
+        <!-- Add more review-container divs as needed -->
     </div>
 </body>
 </html>
