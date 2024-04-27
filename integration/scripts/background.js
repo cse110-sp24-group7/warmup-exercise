@@ -99,7 +99,8 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     localStorage.setItem("sentiment-notes", sentimentNotes);
 
     // Optionally, confirm to the user that the data has been saved
-    alert("Your sentiment and notes have been saved.");
+    // alert("Your sentiment and notes have been saved.");
+    window.location.href = "result.html";
   } else {
     // Alert the user that no emotion has been selected, if needed
     alert("Please select an emotion before submitting.");
