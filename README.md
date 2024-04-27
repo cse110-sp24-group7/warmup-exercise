@@ -9,7 +9,7 @@ For an even better user experience, the background of the page also changes to m
 ![Picture of the widget when hovered over](res/Sentiment%20Widget%202.png)
 
 When the user clicks the "Submit" button, they are led to another page where a quote is generated based on their sentiment, to either motivate or encourage them. Additionally, the user has the option to read responses by other users that match their sentiment. Psychologically, this allows the user to feel included within a community, encouraging them to use the widget daily.
-![Picture of the second screen](res/Second%20Screen.png)
+![Picture of the second screen](res/Second%20Screen%202.png)
 
 ### Developers:
 
