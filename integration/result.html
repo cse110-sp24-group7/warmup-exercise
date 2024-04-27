@@ -1,100 +1,104 @@
 <!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sentiment Rating Widget</title>
+		<link rel="icon" href="res/akatsuki-7-logo.ico" />
+		<script src="scripts/result.js" type="module" defer></script>
+		<script src="./scripts/review.js" defer></script>
+		<link rel="stylesheet" href="./style/review.css" />
+		<link rel="stylesheet" href="./style/result.css" />
+	</head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sentiment Rating Widget</title>
-  <link rel="icon" href="res/akatsuki-7-logo.ico" />
-  <script src="scripts/result.js" defer></script>
-  <script src="./scripts/review.js" defer></script>
-  <link rel="stylesheet" href="./style/review.css" />
-  <link rel="stylesheet" href="./style/result.css" />
-</head>
+	<header>
+		<!-- <img src="/res/favicon.png" /> -->
+		<h1>Sentiment Tracker</h1>
+		<nav class="navbar">
+			<div class="logo">
+				<img src="../res/favicon.png" alt="Logo" />
+			</div>
+			<div class="title">Akatsuki 7's Sentiment Rating Widget</div>
+		</nav>
+	</header>
 
-<header>
-  <!-- <img src="/res/favicon.png" /> -->
-  <h1>Sentiment Tracker</h1>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="../res/favicon.png" alt="Logo" />
-    </div>
-    <div class="title">Akatsuki 7's Sentiment Rating Widget</div>
-  </nav>
-</header>
+	<body>
+		<style>
+			body {
+				background-color: rgb(90, 192, 168);
+			}
+		</style>
 
-<body>
-    <div id="input-summary">
-    <p>You submitted:</p>
-  
-    <div id="quote">
-      <p>Quote:</p>
-    </div>
-  </div>
+		<div id="input-summary">
+			<p>You submitted:</p>
+		</div>
+		<div id="quote">
+			<p>Quote:</p>
+		</div>
 
-  <div class="buttons-container">
-    <button id="recordAnotherBtn"><a href="./index.html">Record Another</a></button>
-    <button id="loadReviewsBtn">Load Reviews</button>
-  </div>
-  <div class="reviews-wrapper">
-    <h2>Here's what others have said:</h2>
-    <div class="review-container" emotion-score="7">
-      <div class="review-header">
-        <span class="reviewer-name">Alice</span>
-        <span class="review-date">April 24, 2024</span>
-      </div>
-      <div class="review-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <!-- <span class="star">&#9733;</span> -->
-      </div>
-      <div class="review-text">Feeling Great!</div>
-    </div>
+		<div class="buttons-container">
+			<button id="recordAnotherBtn">
+				<a href="./index.html">Record Another</a>
+			</button>
+			<button id="loadReviewsBtn">Load Reviews</button>
+		</div>
+		<div class="reviews-wrapper">
+			<h2>Here's what others have said:</h2>
+			<div class="review-container" emotion-score="7">
+				<div class="review-header">
+					<span class="reviewer-name">Alice</span>
+					<span class="review-date">April 24, 2024</span>
+				</div>
+				<div class="review-rating">
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<!-- <span class="star">&#9733;</span> -->
+				</div>
+				<div class="review-text">Feeling Great!</div>
+			</div>
 
-    <div class="review-container" emotion-score="5">
-      <div class="review-header">
-        <span class="reviewer-name">Bob</span>
-        <span class="review-date">April 24, 2024</span>
-      </div>
-      <div class="review-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <!-- <span class="star">&#9733;</span> -->
-      </div>
-      <div class="review-text">Feeling Mediocre...</div>
-    </div>
+			<div class="review-container" emotion-score="5">
+				<div class="review-header">
+					<span class="reviewer-name">Bob</span>
+					<span class="review-date">April 24, 2024</span>
+				</div>
+				<div class="review-rating">
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<!-- <span class="star">&#9733;</span> -->
+				</div>
+				<div class="review-text">Feeling Mediocre...</div>
+			</div>
 
-    <div class="review-container" emotion-score="3">
-      <div class="review-header">
-        <span class="reviewer-name">Charlie</span>
-        <span class="review-date">April 24, 2024</span>
-      </div>
-      <div class="review-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <!-- <span class="star">&#9733;</span> -->
-      </div>
-      <div class="review-text">Feeling Terrible...</div>
-    </div>
+			<div class="review-container" emotion-score="3">
+				<div class="review-header">
+					<span class="reviewer-name">Charlie</span>
+					<span class="review-date">April 24, 2024</span>
+				</div>
+				<div class="review-rating">
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<span class="star">&#9733;</span>
+					<!-- <span class="star">&#9733;</span> -->
+				</div>
+				<div class="review-text">Feeling Terrible...</div>
+			</div>
 
-    <!-- Add more review-container divs as needed -->
-  </div>
-</body>
-
-<footer>
-  <div id="cr">&copy; developed by Akatsuki-7</div>
-</footer>
-
+			<!-- Add more review-container divs as needed -->
+		</div>
+	</body>
+	<footer>
+		<div id="cr">&copy; Developed by Akatsuki-7:</div>
+	</footer>
 </html>
