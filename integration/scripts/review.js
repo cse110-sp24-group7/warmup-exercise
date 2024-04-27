@@ -1,10 +1,10 @@
-let rank = parseInt(localStorage.getItem('sentiment-rank'));
-document.addEventListener('DOMContentLoaded', () => {
-    const reviewContainers = document.querySelectorAll('.review-container');
+let rank = parseInt(localStorage.getItem("sentiment-rank"));
+document.addEventListener("DOMContentLoaded", () => {
+  const reviewContainers = document.querySelectorAll(".review-container");
 
-    reviewContainers.forEach(container => {
-        const score = rank;
-        const stars = container.querySelectorAll('.star');
+  reviewContainers.forEach((container) => {
+    const score = rank;
+    const stars = container.querySelectorAll(".star");
 
     // Loop through each star and color it yellow if it's less than or equal to the score
     stars.forEach((star, index) => {

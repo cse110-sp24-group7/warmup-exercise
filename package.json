@@ -1,12 +1,5 @@
 {
-    "name": "warmup-project",
-    "version": "0.1.0",
-    "private":"true",
-    "scripts":{
-        "prettier:format": "prettier --write \"**/*.{css,js,html}\"",
-        "pretter:check:ci": "prettier --check \"**/*.{css,js,html}\""
-    },
-    "devDependencies": {
-    "prettier": "latest"
-    }
+  "devDependencies": {
+    "prettier-eslint": "^16.3.0"
+  }
 }
