@@ -1,9 +1,7 @@
 name: Prettier on Branch
 
 on:
-  push:
-    branches-ignore:
-      - main
+  workflow_dispatch:
 
 jobs:
   Prettier:
