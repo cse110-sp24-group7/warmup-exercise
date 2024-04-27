@@ -1,13 +1,13 @@
-name: Linting
+name: Lint-Check on PR
 
 on:
-    push:
+    pull_request:
         branches:
             - main
 
 jobs:
-    run-linters:
-        name: Run linters
+    Prettier:
+        name: Run Prettier
         runs-on: ubuntu-latest
 
         steps:
@@ -21,15 +21,14 @@ jobs:
 
             - name: Install Node.js dependencies
               run: yarn install
-            - name: List packages
+
+            - name: List Packages
               run: yarn list --depth=0
 
-            # - name: Run linters
-            #   run: yarn prettier --check .
-            - name: Format code
-              run: yarn prettier --write .
+            - name: Run Prettier
+              run: yarn prettier --check .
 
-            - name: cache node_modules
+            - name: Cache node_modules on Cloud
               uses: actions/cache@v2
               with:
                   path: ~/.npm
