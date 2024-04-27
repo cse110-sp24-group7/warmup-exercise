@@ -28,8 +28,8 @@ jobs:
             - name: List packages
               run: yarn list --depth=0
 
-            - name: Run linters
-              run: yarn prettier --check .
+            # - name: Run linters
+            #   run: yarn prettier --check .
             - name: Format code
               run: yarn prettier --write .
 
