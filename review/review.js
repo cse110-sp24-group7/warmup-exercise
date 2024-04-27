@@ -1,8 +1,9 @@
+let rank = parseInt(localStorage.getItem('sentiment-rank'));
 document.addEventListener('DOMContentLoaded', () => {
     const reviewContainers = document.querySelectorAll('.review-container');
 
     reviewContainers.forEach(container => {
-        const score = parseInt(container.getAttribute('emotion-score'), 10);
+        const score = rank;
         const stars = container.querySelectorAll('.star');
 
         // Loop through each star and color it yellow if it's less than or equal to the score
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Scarlett", "Alexander", "Grace", "Benjamin", "Chloe"
     ];
     const comments = [
-        [], // index 0, no comments since scale starts at 1
+        [],
         [ // 1 star
             "It's one of those days where I just need to take a deep breath and remind myself that tomorrow is a new day.",
             "Feeling lost in the storm today, hoping for a calm tomorrow.",
@@ -97,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const reviewContainers = reviewsWrapper.querySelectorAll('.review-container');
         // Loop through each review container and set a random comment based on its score
+        let commentsWithScore = comments[rank];
         reviewContainers.forEach((container, index) => {
             // Assign random name
             if (index < names.length) {
@@ -104,8 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 nameSpan.textContent = names[index];
             }
             // Assign comment based on score
-            const score = parseInt(container.getAttribute('emotion-score'), 10);
-            container.querySelector('.review-text').textContent = getRandomComment(score);
+            let randomIndex = Math.floor(Math.random() * (commentsWithScore.length));
+            container.querySelector('.review-text').textContent = commentsWithScore[randomIndex];
+            commentsWithScore = [...commentsWithScore.slice(0, randomIndex), ...commentsWithScore.slice(randomIndex + 1)]
         });
 
         reviewsWrapper.classList.add('reviews-visible');
