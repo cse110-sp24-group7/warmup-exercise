@@ -24,14 +24,14 @@ jobs:
 
             # ESLint and Prettier must be in `package.json`
             - name: Install Node.js dependencies
-              run: npm ci
+              run: yarn install
             - name: List packages
-              run: npm list --depth=0
+              run: yarn list --depth=0
 
             - name: Run linters
-              run: prettier --check .
+              run: yarn prettier --check .
             - name: Format code
-              run: prettier --write .
+              run: yarn prettier --write .
 
             - name: cache node_modules
               uses: actions/cache@v2
