@@ -3,26 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team 7: Sentiment Tracker</title>
+    <title>Sentiment Rating Widget</title>
     <link rel="icon" href="res/akatsuki-7-logo.ico" />
     <script src="scripts/result.js" type="module" defer></script>
     <script src="./scripts/review.js" defer></script>
     <link rel="stylesheet" href="./style/review.css" />
+    <link rel="stylesheet" href="./style/result.css" />
   </head>
+
+  <header>
+    <!-- <img src="/res/favicon.png" /> -->
+    <h1>Sentiment Tracker</h1>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../res/favicon.png" alt="Logo" />
+      </div>
+      <div class="title">Akatsuki 7's Sentiment Rating Widget</div>
+    </nav>
+  </header>
+
   <body>
-    <header>
-      <img src="/res/favicon.png" />
-      <h1>Sentiment Tracker</h1>
-    </header>
+    <style>
+      body {
+        background-color: rgb(90, 192, 168);
+      }
+    </style>
+
     <div id="input-summary">
       <p>You submitted:</p>
     </div>
     <div id="quote">
       <p>Quote:</p>
     </div>
-    <button><a href="./index.html">Record Another</a></button>
 
-    <button id="loadReviewsBtn">Load Reviews</button>
+    <div class="buttons-container">
+      <button id="recordAnotherBtn">
+        <a href="./index.html">Record Another</a>
+      </button>
+      <button id="loadReviewsBtn">Load Reviews</button>
+    </div>
     <div class="reviews-wrapper">
       <h2>Here's what others have said:</h2>
       <div class="review-container" emotion-score="7">
@@ -79,4 +98,7 @@
       <!-- Add more review-container divs as needed -->
     </div>
   </body>
+  <footer>
+    <div id="cr">&copy; Developed by Akatsuki-7</div>
+  </footer>
 </html>

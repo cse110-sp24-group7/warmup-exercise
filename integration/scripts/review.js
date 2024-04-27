@@ -136,8 +136,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       // Assign comment based on score
       const score = parseInt(container.getAttribute("emotion-score"), 10);
-      container.querySelector(".review-text").textContent =
-        getRandomComment(score);
+      container.querySelector(".review-text").textContent = getRandomComment(
+        parseInt(localStorage.getItem("sentiment-rank")),
+      );
     });
 
     reviewsWrapper.classList.add("reviews-visible");
