@@ -4,9 +4,10 @@
 
 Designing and laying out the widget helps to structure and create the workflows needed to complete the rest of the app.
 
-## Intended Purpose
+## Intended Purpose: User Story
 
-We wanted a start page that has a little semicircle where the user can hover through and see all of the 7 emojis that represent 7 different emotions and their respective colors. We also wanted a "yelp review" component that shows the user other comments that people have saved from their day. Some othe features we might add later on are common phrases that are graphically displayed based on frequency, and perhaps different color themes.
+As a user, I would like a semicircle or rectangular widget that I can hover through and see change with my mouse position over it. I want to see 7 emojis that represent 7 different emotions and their respective colors (a rainbow).
+As a user, I want a "yelp review" component that shows me other comments that people have saved from their day. This would motivate a social aspect for the platform and would encourage me to use the widget more often.
 
 ## Implementation/Syntax Approaches?
 
@@ -14,7 +15,7 @@ Started with a rough sketch of the widget by hand on Miro, then as the features 
 
 ## Testing
 
-LiveServer editing, Miro
+LiveServer editing and deployment to enhance user experience, Miro board to visualize ideas and share with the team.
 
 #### Authors
 

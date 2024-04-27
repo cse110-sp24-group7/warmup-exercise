@@ -1,9 +1,7 @@
-name: Lint-Check on PR
+name: Prettier on Branch
 
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   Prettier:
@@ -22,11 +20,8 @@ jobs:
       - name: Install Node.js dependencies
         run: yarn install
 
-      - name: List Packages
-        run: yarn list --depth=0
-
       - name: Run Prettier
-        run: yarn prettier --check .
+        run: yarn prettier --write .
 
       - name: Cache node_modules on Cloud
         uses: actions/cache@v2
