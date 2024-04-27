@@ -25,8 +25,18 @@ jobs:
             # ESLint and Prettier must be in `package.json`
             - name: Install Node.js dependencies
               run: npm ci
+            - name: List packages
+              run: npm list --depth=0
 
             - name: Run linters
               run: prettier --check .
             - name: Format code
               run: prettier --write .
+
+            - name: cache node_modules
+              uses: actions/cache@v2
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
