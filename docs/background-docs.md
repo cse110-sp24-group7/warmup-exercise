@@ -1,4 +1,5 @@
 # Documentation for Gradient Background
+
 ## Role of Gradient Background
 
 Depending on the location of the users mouse, the background gradient changes.
@@ -17,5 +18,5 @@ LiveServer editing
 
 #### Authors
 
--   Matteo Persiani
--   Hashim Fituri
+- Matteo Persiani
+- Hashim Fituri

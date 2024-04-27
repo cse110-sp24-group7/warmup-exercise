@@ -1,10 +1,9 @@
 ---
 name: Issue Template
 about: General Issue Template for Projects
-title: 'Issue Template'
-labels: ''
-assignees: ''
-
+title: "Issue Template"
+labels: ""
+assignees: ""
 ---
 
 ## Description

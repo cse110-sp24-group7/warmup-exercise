@@ -1,4 +1,5 @@
 # Documentation for the Design and HTML Layout
+
 ## Role of the Design and Layout
 
 Designing and laying out the widget helps to structure and create the workflows needed to complete the rest of the app.
@@ -17,6 +18,6 @@ LiveServer editing, Miro
 
 #### Authors
 
--   Jessica Qu
--   Angie Nguyen
--   Naina Singh
+- Jessica Qu
+- Angie Nguyen
+- Naina Singh

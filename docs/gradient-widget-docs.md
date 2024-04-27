@@ -16,7 +16,7 @@ semicircle visuals can be found in [semicircle-progress](semicircle-progress).
 
 ## Implementation/Syntax Approaches?
 
-HTML and inline CSS 
+HTML and inline CSS
 
 ## Requirements
 
@@ -28,5 +28,5 @@ LiveServer editing
 
 #### Authors
 
--   Naina Singh
--   Mialyssa Gomez
+- Naina Singh
+- Mialyssa Gomez

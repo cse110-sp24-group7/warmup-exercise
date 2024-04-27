@@ -1,4 +1,5 @@
 # Documentation for Button Routing
+
 ## Role of Button Routing
 
 Buttons will be used to take the user between the two pages that make up the widget.
@@ -17,5 +18,5 @@ LiveServer editing
 
 #### Authors
 
--   Angie Nguyen
--   Jessica Qu
+- Angie Nguyen
+- Jessica Qu
