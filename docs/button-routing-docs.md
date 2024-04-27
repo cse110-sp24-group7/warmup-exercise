@@ -1,4 +1,5 @@
 # Documentation for Button Routing
+
 ## Role of Button Routing
 
 Button routing enables easy traversal back and forth between the two pages that our widget uses.
@@ -18,5 +19,5 @@ LiveServer editing and deployment to enhance user experience.
 
 #### Authors
 
--   Angie Nguyen
--   Jessica Qu
+- Angie Nguyen
+- Jessica Qu

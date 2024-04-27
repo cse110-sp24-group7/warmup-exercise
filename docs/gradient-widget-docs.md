@@ -12,7 +12,7 @@ Initially intended to be a semicircle gradient visual, however progress stalled 
 
 ## Implementation/Syntax Approaches?
 
-HTML and inline CSS 
+HTML and inline CSS
 
 ## Requirements
 
@@ -24,5 +24,5 @@ LiveServer editing and deployment to enhance user experience.
 
 #### Authors
 
--   Naina Singh
--   Mialyssa Gomez
+- Naina Singh
+- Mialyssa Gomez

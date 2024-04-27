@@ -1,4 +1,5 @@
 # Documentation for the Design and HTML Layout
+
 ## Role of the Design and Layout
 
 Designing and laying out the widget helps to structure and create the workflows needed to complete the rest of the app.
@@ -6,7 +7,7 @@ Designing and laying out the widget helps to structure and create the workflows 
 ## Intended Purpose: User Story
 
 As a user, I would like a semicircle or rectangular widget that I can hover through and see change with my mouse position over it. I want to see 7 emojis that represent 7 different emotions and their respective colors (a rainbow).
-As a user, I want a "yelp review" component that shows me other comments that people have saved from their day. This would motivate a social aspect for the platform and would encourage me to use the widget more often. 
+As a user, I want a "yelp review" component that shows me other comments that people have saved from their day. This would motivate a social aspect for the platform and would encourage me to use the widget more often.
 
 ## Implementation/Syntax Approaches?
 
@@ -18,6 +19,6 @@ LiveServer editing and deployment to enhance user experience, Miro board to visu
 
 #### Authors
 
--   Jessica Qu
--   Angie Nguyen
--   Naina Singh
+- Jessica Qu
+- Angie Nguyen
+- Naina Singh
