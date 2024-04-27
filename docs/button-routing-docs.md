@@ -1,12 +1,12 @@
 # Documentation for Button Routing
-
 ## Role of Button Routing
 
-Buttons will be used to take the user between the two pages that make up the widget.
+Button routing enables easy traversal back and forth between the two pages that our widget uses.
 
-## Intended Purpose
+## Intended Purpose: User Story
 
-When the user clicks on the submit button on the starting page, it should take them to the page containing the quote and "yelp reviews". When the user clicks on the Load Reviews button, it should show them a couple of other things that people have said on the widget that were similar.
+As a user, when I click on the submit button on the starting page, I would like the page to route me to the page with a quote about my mood and other user responses. This would allow a more social aspect in the widget/application, and provide a better managed user experience.
+As a user, I also would like for the Load Reviews button to show me other people who are in a similar mood as I am, rather than random reviews. This will help validate my sentiment on a use-by-use basis and promote retention.
 
 ## Implementation/Syntax Approaches?
 
@@ -14,9 +14,9 @@ HTML
 
 ## Testing
 
-LiveServer editing
+LiveServer editing and deployment to enhance user experience.
 
 #### Authors
 
-- Angie Nguyen
-- Jessica Qu
+-   Angie Nguyen
+-   Jessica Qu

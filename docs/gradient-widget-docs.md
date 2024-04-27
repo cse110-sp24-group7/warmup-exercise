@@ -2,21 +2,17 @@
 
 ## Role of Gradient Widget
 
-Visuals for sentiment tracker
+Create a gradient inside the widget to provide visual feedback to the sentiment tracker.
 
-## Intended Purpose
+## Intended Purpose: User Story
 
-The first page of the sentiment tracker. Hover over the colors, and a corresponding
-sentiment rating will appear in the form of an emoji. Once clicked, it will take the
-user to another page (Not implemented yet).
+As a user, I would like to hover over the colors and see a corresponding sentiment rating appearing in the form of an emoji. When I click this, I would like it to take me to another page where I can view more about the sentiment I chose.
 
-Initially intended to be a semicircle gradient visual, however progress stalled and the
-semicircle implementation converted into a bar gradient visual. Two different incomplete
-semicircle visuals can be found in [semicircle-progress](semicircle-progress).
+Initially intended to be a semicircle gradient visual, however progress stalled and the semicircle implementation converted into a bar gradient visual. Two different incomplete semicircle visuals can be found in previous versions.
 
 ## Implementation/Syntax Approaches?
 
-HTML and inline CSS
+HTML and inline CSS 
 
 ## Requirements
 
@@ -24,9 +20,9 @@ N/A
 
 ## Testing
 
-LiveServer editing
+LiveServer editing and deployment to enhance user experience.
 
 #### Authors
 
-- Naina Singh
-- Mialyssa Gomez
+-   Naina Singh
+-   Mialyssa Gomez
