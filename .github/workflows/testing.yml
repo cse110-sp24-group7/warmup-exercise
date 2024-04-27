@@ -1,34 +1,30 @@
-name: Code Quality checks
+name: Format
+
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  check_concurrency:
+  format:
     runs-on: ubuntu-latest
-    outputs:
-      concurrencyKey: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
-    steps:
-      - name: Extract Concurrency Key
-        id: extract_concurrency_key
-        run: echo "::set-output name=concurrencyKey::${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}"
 
-  prettier:
-    name: Prettier
-    needs: check_concurrency
-    runs-on: ubuntu-22.04
-    concurrency:
-      group: ${{ needs.check_concurrency.outputs.concurrencyKey }}
-      cancel-in-progress: true
-    strategy:
-      matrix:
-        node-version: [18]
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - name: Install dependencies
-        run: npm install --save-dev
+          node-version: "14.x"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Prettier
+        run: npx prettier --write "**/*.{js,css,html}"
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply formatting changes
+          branch: ${{ github.head_ref }}
